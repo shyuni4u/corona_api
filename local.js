@@ -14,7 +14,7 @@ const createResponse = (status, body) => ({
 mysqlPool.getConnection(function(err, connection){
     if(err !== null)
         return console.log(createResponse(500, {message: err}));
-    connection.query('SELECT 1 AS RESULT', function(error,results,field) {
+    connection.query('SELECT "TEST" AS RESULT', function(error,results,field) {
         connection.release();
         if(error !== null) 
             return console.log(createResponse(500, {message: error}));
